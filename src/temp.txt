@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [file, setFile] = useState(null);
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('file', file);
+    try {
+      const response = await fetch('http://localhost:5000/predict_disease', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      setResult(data.result);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="file" onChange={handleChange} />
+        <button type="submit">Submit</button>
+      </form>
+      {loading && <p>Loading...</p>}
+      {result && (
+        <ul>
+          {Object.entries(result).map(([key, value]) => (
+            <li key={key}>
+              {key}: {value}%
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default App;
