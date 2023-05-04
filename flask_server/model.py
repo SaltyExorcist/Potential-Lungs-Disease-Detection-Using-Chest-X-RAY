@@ -17,15 +17,16 @@ def predict_disease(img):
     model = tf.keras.models.load_model(pretrained_model_path)
 
     # Preprocessing
-    img=img.resize((224,224))
-    img=np.array(img)
+    #img=img.resize((224,224))
+    #img=np.array(img)
     #img= np.reshape(img, (224, 224, 3))
-    #img = tf.image.resize(img, [224, 224]) # resize the image
-    #img = tf.keras.utils.img_to_array(img)
+    img = tf.image.resize(img, [224, 224]) # resize the image
+    img = tf.keras.utils.img_to_array(img)
     #img = tf.keras.preprocessing.image.load_img(img, target_size=(224, 224))
     #img = load_img(img, target_size=(224, 224))
     #img=img_to_array(img)
     #img = tf.keras.preprocessing.image.img_to_array(img)
+    
     # Normalisation 
     img = img/255.
     img = tf.expand_dims(img, axis=0)
