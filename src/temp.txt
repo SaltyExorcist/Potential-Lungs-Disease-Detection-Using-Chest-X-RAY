@@ -79,3 +79,21 @@ def process_image(file):
     #arr = tf.keras.preprocessing.image.img_to_array(img)
     img = Image.open(file)
     return img
+
+
+/*Needed Part*/
+<div>
+      <form onSubmit={handleSubmit} className='new-item-form'>
+        <input type="file" onChange={handleFileChange} />
+        <button className="btn" type="submit">Submit</button>
+      </form>
+      {result && (
+        <div className="result-container">
+        <p>Bacterial Pneumonia: {result['Bacterial Pneumonia']}%</p>
+        <p>Corona Virus Disease: {result['Corona Virus Disease']}%</p>
+        <p>Normal: {result['Normal']}%</p>
+        <p>Tuberculosis: {result['Tuberculosis']}%</p>
+        <p>Viral Pneumonia: {result['Viral Pneumonia']}%</p>
+      </div>
+      )} 
+    </div>

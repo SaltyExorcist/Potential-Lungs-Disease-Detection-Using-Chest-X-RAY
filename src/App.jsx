@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import "./styles.css";
 import axios from 'axios';
+import Header from './components/Header';
+// import './styles.css';
+import Form from './components/Form';
 
 function App() {
-  const [file, setFile] = useState(null);
+  const inputRef =useState(null);
+
+  const [file, setFile] = useState("");
   const [result, setResult] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
+
+  const handleImageClick = () => {
+    inputRef.current.click();
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,7 +35,11 @@ function App() {
   };
 
   return (
-    <div>
+    <>
+    <Header/>
+    
+    <Form/>
+    {/*<div>
       <form onSubmit={handleSubmit} className='new-item-form'>
         <input type="file" onChange={handleFileChange} />
         <button className="btn" type="submit">Submit</button>
@@ -41,7 +53,8 @@ function App() {
         <p>Viral Pneumonia: {result['Viral Pneumonia']}%</p>
       </div>
       )} 
-    </div>
+      </div>*/}
+    </>
   );
 }
 
