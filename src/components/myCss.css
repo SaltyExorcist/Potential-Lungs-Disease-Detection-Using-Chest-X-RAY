@@ -43,8 +43,9 @@ img{
 }
 
 .flex-item-right {
-  background-color: dodgerblue;
+  background-color: #fff;
   padding: 10px;
+  vertical-align: middle;
   flex: 50%;
 }
 
