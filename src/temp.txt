@@ -81,7 +81,7 @@ def process_image(file):
     return img
 
 
-/*Needed Part*/
+/*Needed Part =>Result display basic*/
 <div>
       <form onSubmit={handleSubmit} className='new-item-form'>
         <input type="file" onChange={handleFileChange} />
