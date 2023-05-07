@@ -7,24 +7,27 @@ import "./w3.css"
 export default function Form() {
   
   const inputRef = useRef(null);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState({ preview: '', raw: '' });
   const [result, setResult] = useState(null);
 
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
+  const handleImageChange = (e) => {
+    setImage({
+      preview: URL.createObjectURL(e.target.files[0]),
+      raw: e.target.files[0]
+     });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append('file', image);
+    formData.append('file', image.raw);
 
     const response = await axios.post('http://localhost:5000/predict_disease', formData, {
       headers: { 'Content-Type': 'multipart/form-data',
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length, X-Requested-With", },
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length, X-Requested-With" },
     });
     
     setResult(response.data.result);
@@ -34,8 +37,8 @@ export default function Form() {
     <div className="flex-container">
       <form className="flex-item-left w3-light-grey" onSubmit={handleSubmit}>
         <div>
-          {image ?
-          <img src={URL.createObjectURL(image)} alt="The X-RAY" style={{verticalAlign:top}}/>:
+          {image.preview ?
+          <img src={image.preview} alt="The X-RAY" style={{verticalAlign:top}}/>:
           <img src="upload_image.png" alt="The X-RAY" style={{verticalAlign:top}}/>
           }
         </div>
