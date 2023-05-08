@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react';
-import Chart from 'react-apexcharts'
+import Chart from 'react-apexcharts';
 import axios from 'axios';
 import "./myCss.css";
-import "./w3.css"
+import "./w3.css";
 
 export default function Form() {
   
   const inputRef = useRef(null);
   const [image, setImage] = useState({ preview: '', raw: '' });
   const [result, setResult] = useState(null);
-
+  
   const handleImageChange = (e) => {
     setImage({
       preview: URL.createObjectURL(e.target.files[0]),
@@ -33,89 +33,162 @@ export default function Form() {
     setResult(response.data.result);
   };
 
+  const handleReset = () =>{
+    setImage({
+      preview: '',
+      raw: ''
+    });
+    setResult();
+  }
+
   return (
     <div className="flex-container">
-      <form className="flex-item-left w3-light-grey" onSubmit={handleSubmit}>
+      <form className="flex-item-left w3-light-blue w3-topbar w3-bottombar w3-border-indigo" onSubmit={handleSubmit}>
+        <div className='w3-panel w3-leftbar w3-border-indigo w3-blue'>
+          <h2>Input Area: </h2>
+        </div>
         <div>
           {image.preview ?
-          <img src={image.preview} alt="The X-RAY" style={{verticalAlign:top}}/>:
-          <img src="upload_image.png" alt="The X-RAY" style={{verticalAlign:top}}/>
+          <img src={image.preview} alt="The X-RAY" className='w3-round-xxlarge' style={{verticalAlign:top}}/>:
+          <img src="upload_image.png" alt="The X-RAY" className='w3-round-xxlarge' style={{verticalAlign:top}}/>
           }
         </div>
         <div className="w3-container Wbutton">
-          <button className="w3-button w3-left w3-quarter w3-hover-blue w3-hover-text-white" >Submit</button>
-          <input className="w3-button w3-center w3-rest w3-hover-purple w3-hover-text-white" type="file" onChange={handleImageChange} ref={inputRef}/>
-          
-          {/* <button className="w3-button w3-right w3-quarter w3-hover-red w3-hover-text-white" type="reset">Reset</button> */}
+          <input className="w3-button w3-left w3-quarter w3-hover-blue w3-hover-text-white" type='Submit' value='Submit'/>
+          <input className="w3-button w3-center w3-half w3-hover-purple w3-hover-text-white" type="file" onChange={handleImageChange} ref={inputRef}/>
+          <input className="w3-button w3-right w3-quarter w3-hover-red w3-hover-text-white" type="Reset" value="Reset" onClick={handleReset}/>
         </div>
       </form>
-      <div className="flex-item-right">
+      <div className="flex-item-right w3-pale-green w3-topbar w3-bottombar w3-border-teal">
+        <div className='w3-panel w3-leftbar w3-border-teal w3-light-green'>
+          <h2>Result Area: </h2>
+        </div>
         {result ?
           <div>
             <Chart
-            className="w3-hide-medium"
+              className="w3-hide-medium w3-hide-small"
+              series={
+                [result['Bacterial Pneumonia'],
+                 result['Corona Virus Disease'],
+                result['Tuberculosis'],
+                result['Viral Pneumonia'],
+                result['Normal']]
+              }
+              type='polarArea'
+              width="94%"
+              options={{
+                stroke: {
+                  colors: ['#fff']
+                },
+                fill: {
+                  opacity: 0.8
+                },
+                responsive: [{
+                  breakpoint: 480,
+                  options: {
+                    legend: {
+                      position: 'bottom'
+                    }
+                  }
+                }],
+                labels:['Bacterial Pneumonia',
+                 'Corona Virus Disease',
+                 'Tuberculosis', 
+                 'Viral Pneumonia', 
+                 'Normal']
+              }}
+            />
+            <Chart
+            className="w3-hide-large w3-hide-small"
             series={
                 [result['Bacterial Pneumonia'],
                 result['Corona Virus Disease'],
-                result['Normal'],
                 result['Tuberculosis'],
-                result['Viral Pneumonia']]
+                result['Viral Pneumonia'],
+                result['Normal']]
               }
             type="donut"
             width="98%"
             options={{
               labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease', 
-                     'Normal', 
+                     'Corona Virus Disease',
                      'Tuberculosis', 
-                     'Viral Pneumonia']
+                     'Viral Pneumonia', 
+                     'Normal']
             }}
             />
             <Chart
-            className="w3-hide-large"
+            className="w3-hide-large w3-hide-medium"
             series={
                 [result['Bacterial Pneumonia'],
                 result['Corona Virus Disease'],
-                result['Normal'],
                 result['Tuberculosis'],
-                result['Viral Pneumonia']]
+                result['Viral Pneumonia'],
+                result['Normal']]
               }
             type="pie"
             width="98%"
             options={{
               labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease', 
-                     'Normal', 
+                     'Corona Virus Disease',
                      'Tuberculosis', 
-                     'Viral Pneumonia']
+                     'Viral Pneumonia', 
+                     'Normal']
             }}
             />
           </div>
           : 
           <div>
             <Chart
-            className="w3-hide-medium"
-            series={[0,0,100,0,0]}
+              className="w3-hide-medium w3-hide-small"
+              series={[0,0,0,0,100]}
+              type='polarArea'
+              width="98%"
+              options={{
+                stroke: {
+                  colors: ['#fff']
+                },
+                fill: {
+                  opacity: 0.8
+                },
+                responsive: [{
+                  breakpoint: 480,
+                  options: {
+                    legend: {
+                      position: 'bottom'
+                    }
+                  }
+                }],
+                labels:['Bacterial Pneumonia',
+                 'Corona Virus Disease',
+                 'Tuberculosis', 
+                 'Viral Pneumonia', 
+                 'Normal']
+              }}
+            />
+            <Chart
+            className="w3-hide-large w3-hide-small"
+            series={[0,0,0,0,100]}
             type="donut"
             width="98%"
             options={{
               labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease', 
-                     'Normal', 
+                     'Corona Virus Disease',
                      'Tuberculosis', 
-                     'Viral Pneumonia']}}
+                     'Viral Pneumonia', 
+                     'Normal']}}
             />
             <Chart
-            className="w3-hide-large"
-            series={[0,0,100,0,0]}
+            className="w3-hide-large w3-hide-medium"
+            series={[0,0,0,0,100]}
             type="pie"
             width="98%"
             options={{
               labels:['Bacterial Pneumonia',
                      'Corona Virus Disease', 
-                     'Normal', 
                      'Tuberculosis', 
-                     'Viral Pneumonia']}}
+                     'Viral Pneumonia',
+                     'Normal']}}
             />
           </div>
         
