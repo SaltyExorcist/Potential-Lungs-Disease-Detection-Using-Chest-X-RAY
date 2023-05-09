@@ -80,7 +80,7 @@ button,input{
 .chart-shape{
   padding: 40px 0;
   margin: 17% 0;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
@@ -91,7 +91,7 @@ button,input{
   .chart-shape{
     padding: 20px 0;
     margin: 0 0;
-    border: 3px solid red;
+    /* border: 3px solid red; */
   }
   img{
     height:400px;
@@ -103,7 +103,7 @@ button,input{
   .chart-shape{
     padding: 70px 0;
     margin: 0 0;
-    border: 3px solid red;
+    /* border: 3px solid red; */
   }
 }
 
@@ -111,7 +111,7 @@ button,input{
   .chart-shape{
     padding: 70px 0;
     margin: 11% 0;
-    border: 3px solid blueviolet;
+    /* border: 3px solid blueviolet; */
   }
   img{
     height: 100%;
