@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./styles.css";
 import axios from 'axios';
+import PDFReport from './components/PDFReport';
 
 function App() {
   const [file, setFile] = useState(null);
@@ -39,6 +40,7 @@ function App() {
         <p>Normal: {result['Normal']}%</p>
         <p>Tuberculosis: {result['Tuberculosis']}%</p>
         <p>Viral Pneumonia: {result['Viral Pneumonia']}%</p>
+        <PDFReport result={result} />
       </div>
       )} 
     </div>
