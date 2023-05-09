@@ -64,25 +64,56 @@ button,input{
 }
 
 .Wbutton{
-    padding-top:16px;
-    font-weight: bold;
-    letter-spacing: 4px;
+  padding-top:16px;
+  font-weight: bold;
+  letter-spacing: 4px;
 }
 .foot{
-    font-family: "Abel";
-    font-size: 13px;
-    text-align: right;
-    letter-spacing: 4px;
-    line-height: 31px;
-    padding: 20px 40px;
+  font-family: "Abel";
+  font-size: 13px;
+  text-align: right;
+  letter-spacing: 4px;
+  line-height: 31px;
+  padding: 20px 40px;
+}
+
+.chart-shape{
+  padding: 40px 0;
+  margin: 17% 0;
+  border: 3px solid green;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 1003px) {
   .flex-item-right, .flex-item-left {
     flex: 100%;
   }
+  .chart-shape{
+    padding: 20px 0;
+    margin: 0 0;
+    border: 3px solid red;
+  }
   img{
     height:400px;
+  }
+}
+
+@media (min-width:1201px)
+{
+  .chart-shape{
+    padding: 70px 0;
+    margin: 0 0;
+    border: 3px solid red;
+  }
+}
+
+@media (min-width:1444px){
+  .chart-shape{
+    padding: 70px 0;
+    margin: 11% 0;
+    border: 3px solid blueviolet;
+  }
+  img{
+    height: 100%;
   }
 }

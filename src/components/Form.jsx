@@ -10,6 +10,31 @@ export default function Form() {
   const [image, setImage] = useState({ preview: '', raw: '' });
   const [result, setResult] = useState(null);
   
+  //Common option of all charts
+  const [chartState, setchartState] = useState({
+    options:{
+      stroke: {
+        colors: ['#fff']
+      },
+      fill: {
+        opacity: 0.8
+      },
+      responsive: [{
+        breakpoint: 530,
+        options: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }],
+      labels:['Bacterial Pneumonia',
+       'Corona Virus Disease',
+       'Tuberculosis', 
+       'Viral Pneumonia', 
+       'Normal']
+    }
+  });
+  
   const handleImageChange = (e) => {
     setImage({
       preview: URL.createObjectURL(e.target.files[0]),
@@ -64,39 +89,19 @@ export default function Form() {
           <h2>Result Area: </h2>
         </div>
         {result ?
-          <div>
+          <div className='chart-shape'>
             <Chart
               className="w3-hide-medium w3-hide-small"
               series={
                 [result['Bacterial Pneumonia'],
-                 result['Corona Virus Disease'],
+                result['Corona Virus Disease'],
                 result['Tuberculosis'],
                 result['Viral Pneumonia'],
                 result['Normal']]
               }
               type='polarArea'
               width="94%"
-              options={{
-                stroke: {
-                  colors: ['#fff']
-                },
-                fill: {
-                  opacity: 0.8
-                },
-                responsive: [{
-                  breakpoint: 480,
-                  options: {
-                    legend: {
-                      position: 'bottom'
-                    }
-                  }
-                }],
-                labels:['Bacterial Pneumonia',
-                 'Corona Virus Disease',
-                 'Tuberculosis', 
-                 'Viral Pneumonia', 
-                 'Normal']
-              }}
+              options={chartState.options}
             />
             <Chart
             className="w3-hide-large w3-hide-small"
@@ -109,13 +114,7 @@ export default function Form() {
               }
             type="donut"
             width="98%"
-            options={{
-              labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease',
-                     'Tuberculosis', 
-                     'Viral Pneumonia', 
-                     'Normal']
-            }}
+            options={chartState.options}
             />
             <Chart
             className="w3-hide-large w3-hide-medium"
@@ -128,67 +127,31 @@ export default function Form() {
               }
             type="pie"
             width="98%"
-            options={{
-              labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease',
-                     'Tuberculosis', 
-                     'Viral Pneumonia', 
-                     'Normal']
-            }}
+            options={chartState.options}
             />
           </div>
           : 
-          <div>
+          <div className=''>
             <Chart
-              className="w3-hide-medium w3-hide-small"
+              className="w3-hide-medium w3-hide-small chart-shape"
               series={[0,0,0,0,100]}
               type='polarArea'
               width="98%"
-              options={{
-                stroke: {
-                  colors: ['#fff']
-                },
-                fill: {
-                  opacity: 0.8
-                },
-                responsive: [{
-                  breakpoint: 480,
-                  options: {
-                    legend: {
-                      position: 'bottom'
-                    }
-                  }
-                }],
-                labels:['Bacterial Pneumonia',
-                 'Corona Virus Disease',
-                 'Tuberculosis', 
-                 'Viral Pneumonia', 
-                 'Normal']
-              }}
+              options={chartState.options}
             />
             <Chart
-            className="w3-hide-large w3-hide-small"
+            className="w3-hide-large w3-hide-small chart-shape"
             series={[0,0,0,0,100]}
             type="donut"
             width="98%"
-            options={{
-              labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease',
-                     'Tuberculosis', 
-                     'Viral Pneumonia', 
-                     'Normal']}}
+            options={chartState.options}
             />
             <Chart
-            className="w3-hide-large w3-hide-medium"
+            className="w3-hide-large w3-hide-medium chart-shape"
             series={[0,0,0,0,100]}
             type="pie"
             width="98%"
-            options={{
-              labels:['Bacterial Pneumonia',
-                     'Corona Virus Disease', 
-                     'Tuberculosis', 
-                     'Viral Pneumonia',
-                     'Normal']}}
+            options={chartState.options}
             />
           </div>
         
