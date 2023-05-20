@@ -139,7 +139,7 @@ footer {
   align-items: center;
   color: #fff;
   text-align: center;
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -228,3 +228,34 @@ footer p {
  .cta:active {
   transform: scale(0.95);
  }
+
+
+ /* Card styles */
+.card {
+  background-color: #b1dae7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
