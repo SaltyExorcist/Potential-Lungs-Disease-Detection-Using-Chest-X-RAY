@@ -14,7 +14,7 @@ def pred():
     file = request.files['file']
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(file_path)
-    img_data=cv2.imread(file_path)
+    img_data=cv2.imread(file_path)      
     result = predict_disease(img_data)
     return jsonify({'result': result})
 
