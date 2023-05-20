@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800,900&display=swap");
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #D6EDED;
+    max-width: 400px;
+    padding: 1rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .logo img {
+    width: 75px;
+    margin-right: 10px;
+    border-radius: 13px;
+  }
+  
+  /*header .logo
+  {
+    color: #030300;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing:2px;
+  }*/
+  
+  header ul
+  {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  
+  header ul li
+  {
+    list-style: none;
+    margin-left: 20px;
+  }
+  
+  header ul li a
+  {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #030300;
+    border-radius: 20px;
+  }
+  
+  header ul li a:hover,
+  header ul li a.active
+  {
+    background-color: #DD7F73;
+    color: #fff;
+  }
+
+  footer {
+    background-image: url('./wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  } 
+  
+  
+  
+  footer h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #DD7F73;
+  }
+
+  .about-paragraph {
+    font-size: 16px;
+    text-align: left;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-85%,-50%);
+  }

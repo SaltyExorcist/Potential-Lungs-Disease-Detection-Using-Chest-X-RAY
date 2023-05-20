@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import "./styles.css";
+import "./about_style.css";
 import axios from 'axios';
-import Logo from './logo.png'
 
-function Header() {
+
+function FooterAbout() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
 
@@ -28,18 +28,18 @@ function Header() {
   };
 
   return (
-    <header>
-      <div className="logo">
-		<img src={Logo}/>
-    </div>
-		<ul>
-			<li><a href="/" className="active">Home</a></li>
-			<li><a href="/About">About us</a></li>
-			<li><a href="https://github.com/SaltyExorcist/Potential-Lungs-Disease-Detection-Using-Chest-X-RAY" target="_blank" rel="noopener noreferrer">Contribute</a></li>
-			<li><a href="/">Contact us</a></li>
-		</ul>
-	</header>
+    <div className="footer">
+    <footer>
+  <h3>Footer Title</h3>
+  <p>Some text describing your website or company.</p>
+  <div className="footer-links">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</footer>
+ </div>
   );
 }
 
-export default Header;
+export default FooterAbout;

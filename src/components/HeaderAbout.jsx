@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import "./styles.css";
+import "./about_style.css";
 import axios from 'axios';
 import Logo from './logo.png'
 
-function Header() {
+function HeaderAbout() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
 
@@ -33,8 +33,8 @@ function Header() {
 		<img src={Logo}/>
     </div>
 		<ul>
-			<li><a href="/" className="active">Home</a></li>
-			<li><a href="/About">About us</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/About" className="active">About us</a></li>
 			<li><a href="https://github.com/SaltyExorcist/Potential-Lungs-Disease-Detection-Using-Chest-X-RAY" target="_blank" rel="noopener noreferrer">Contribute</a></li>
 			<li><a href="/">Contact us</a></li>
 		</ul>
@@ -42,4 +42,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderAbout;
