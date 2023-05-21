@@ -109,8 +109,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const PDFReport = ({ result }) => {
+const PDFReport = ({ result , name, age, height, weight}) => {
   const generateReport = () => {
+
+    const calculateBMI = () => {
+      const heightInMeters = height / 100; // Convert height to meters
+      const bmi = weight / (heightInMeters * heightInMeters);
+      return bmi.toFixed(2); // Return BMI value rounded to 2 decimal places
+    };
+
     const getConditionText = (result) => {
       const conditions = [
         { label: 'Bacterial Pneumonia', percentage: result['Bacterial Pneumonia'], severity: '' },
@@ -178,6 +185,14 @@ const PDFReport = ({ result }) => {
             <Image src="./src/components/logo.png" style={styles.logo} />
             <Text style={styles.heading}>Medical Report</Text>
             <View style={styles.line} />
+            <View style={styles.section}>
+            <Text style={styles.subheading}>User Information:</Text>
+            <Text style={styles.text}>Name: {name}</Text>
+            <Text style={styles.text}>Age: {age}</Text>
+            <Text style={styles.text}>Height: {height}</Text>
+            <Text style={styles.text}>Weight: {weight}</Text>
+            <Text style={styles.text}>BMI: {calculateBMI()}</Text>
+            </View>
             <View style={styles.section}>
               <Text style={styles.subheading}>Results:</Text>
               <View style={styles.table}>
