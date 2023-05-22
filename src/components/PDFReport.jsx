@@ -189,8 +189,8 @@ const PDFReport = ({ result , name, age, height, weight}) => {
             <Text style={styles.subheading}>User Information:</Text>
             <Text style={styles.text}>Name: {name}</Text>
             <Text style={styles.text}>Age: {age}</Text>
-            <Text style={styles.text}>Height: {height}</Text>
-            <Text style={styles.text}>Weight: {weight}</Text>
+            <Text style={styles.text}>Height: {height} cm</Text>
+            <Text style={styles.text}>Weight: {weight} Kg</Text>
             <Text style={styles.text}>BMI: {calculateBMI()}</Text>
             </View>
             <View style={styles.section}>

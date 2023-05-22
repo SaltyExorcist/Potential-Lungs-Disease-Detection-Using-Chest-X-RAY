@@ -28,9 +28,9 @@ function Header() {
     setResult(response.data.result);
   };
 
-  const handleContactClick = () => {
+  const toggleCard = () => {
     event.preventDefault();
-    setShowCard(true);
+    setShowCard(!showCard);
   };
 
   return (
@@ -42,7 +42,7 @@ function Header() {
 			<li><a href="/" className="active">Home</a></li>
 			<li><a href="/About">About us</a></li>
 			<li><a href="https://github.com/SaltyExorcist/Potential-Lungs-Disease-Detection-Using-Chest-X-RAY" target="_blank" rel="noopener noreferrer">Contribute</a></li>
-			<li><a href="/" onClick={handleContactClick}>Contact us</a></li>
+			<li><a href="/" onClick={toggleCard}>Contact us</a></li>
 		</ul>
     {showCard && (
         <div className="card">

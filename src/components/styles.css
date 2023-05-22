@@ -19,6 +19,32 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+  .new-item-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .new-item-form input[type="text"],
+.new-item-form input[type="number"],
+.new-item-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid hsl(200, 100%, 40%);
+  background: #316A74;
+  border-radius: 4px;
+  color: hsl(200, 100%, 90%);
+}
+
+.new-item-form input[type="file"] {
+  padding: 8px 12px;
+  background: #03002c;
+  color: #5dc0a6;
+}
+
+.new-item-form input:focus {
+  border-color: hsl(200, 100%, 70%);
+}
+
 
   .btn {
     background: #DD7F73;
@@ -58,6 +84,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 20px;
   }
 
   header
@@ -122,11 +149,24 @@ header ul li a.active
 }
 
 .form-container{
+  display: flex;
+  flex-grow: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
 }
+
+.form-card{
+  background-color: #b1dae7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
 
 
 footer {
@@ -137,9 +177,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #f4a261;
   text-align: center;
-  position: sticky;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -150,6 +190,7 @@ footer {
 footer h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #f4a261;
 }
 
 footer p {
@@ -231,7 +272,9 @@ footer p {
 
 
  /* Card styles */
+ /*
 .card {
+  display: flex;
   background-color: #b1dae7;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -240,6 +283,20 @@ footer p {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+*/
+
+.card {
+  position: fixed;
+  top: 100px;
+  left: 90%;
+  transform: translateX(-50%);
+  background-color: #b1dae7;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 300px;
   text-align: center;
 }
 
@@ -259,3 +316,31 @@ footer p {
   width: 100%;
   height: 100vh;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height:100svh;
+}
+
+.container > .footer {
+  margin-top: auto;
+}
+
+.item {
+  width: 56%;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+
+::-webkit-file-upload-button {
+  display: none;
+}
+
+
+

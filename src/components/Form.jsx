@@ -48,27 +48,30 @@ function Form() {
   };
 
   return (
+    <>
     <div className="form-container">
+    <div className="form-card">
       <form onSubmit={handleSubmit} className='new-item-form'>
       <div>
     <label>Name:</label>
-    <input type="text" value={name} onChange={handleNameChange} />
+    <input type="text" value={name} required onChange={handleNameChange} />
   </div>
   <div>
     <label>Age:</label>
-    <input type="number" value={age} onChange={handleAgeChange} />
+    <input type="text" value={age} required onChange={handleAgeChange} />
   </div>
   <div>
     <label>Height:</label>
-    <input type="text" value={height} onChange={handleHeightChange} />
+    <input type="number" value={height} required placeholder="in cm" onChange={handleHeightChange} />
   </div>
   <div>
     <label>Weight:</label>
-    <input type="text" value={weight} onChange={handleWeightChange} />
+    <input type="number" value={weight} required placeholder="in kg" onChange={handleWeightChange} />
   </div>
-        <input type="file" onChange={handleFileChange} />
+        <input type="file" id="files"  onChange={handleFileChange} />
         <button className="btn" type="submit">Submit</button>
       </form>
+      </div>
       {result && (
         <div className="result-container">
         <p>Bacterial Pneumonia: {result['Bacterial Pneumonia']}%</p>
@@ -80,6 +83,7 @@ function Form() {
       </div>
       )} 
     </div>
+    </>
   );
 }
 
