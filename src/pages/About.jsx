@@ -31,18 +31,19 @@ function About() {
     <>
     <div>
       <HeaderAbout/>
+      <h2><span className="tel1">About</span> <span className="tel2">Medbot</span></h2>
 <p className="about-paragraph">
-Potential Lungs Disease Detection is an artificial intelligence-based initiative. For the Model, we employ a deep learning process such as CNN and some advanced variants of CNN, and Python for the back-end. Front end software also uses React and Python.This is a senior year college assignment.
+Medbot is an artificial intelligence-based initiative. For the Model, we employ a deep learning process such as CNN and some advanced variants of CNN, and Python for the back-end. Front end software also uses React and Python.This is a senior year college assignment.
 
 Some of the files are written in the 'ipynb' format because they were created using 'Google colab'. We have included a link to the Google colab notebook in each notebook so that you can download the 'py' format for use.<br/>
 
 Collaborator :- <br/>
 
-Rahul Biswas(https://github.com/ninja-codes-droid)<br/>
-Subhrojoyti Neogi(https://github.com/SaltyExorcist)<br/>
-Pranab Kumar Mondal(https://github.com/Lucifer-P13)<br/>
-Dipak Giri(https://github.com/dipakgiri17)<br/>
-Rhydam Bose(https://github.com/Rhydam-Jr001)<br/>
+Rahul Biswas(<a href="https://github.com/ninja-codes-droid" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
+Subhrojoyti Neogi(<a href="https://github.com/SaltyExorcist" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
+Pranab Kumar Mondal(<a href="https://github.com/Lucifer-P13" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
+Dipak Giri(<a href="https://github.com/dipakgiri17" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
+Rhydam Bose(<a href="https://github.com/Rhydam-Jr001" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
 <br/><br/>
 
 												

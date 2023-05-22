@@ -75,6 +75,27 @@
     color: #fff;
   }
 
+  h2{
+    font-size: 3em;
+    margin:0;
+    padding:0;
+    text-align: left;
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    transform: translate(-50%,-50%);
+    color: #030300;
+  }
+  
+  span.tel1
+  {
+    color: #212d40;
+  }
+  span.tel2
+  {
+    color: #316A74;
+  }
+
   footer {
     background-image: url('./wave.svg');
     background-repeat: no-repeat;
@@ -122,7 +143,7 @@
     font-size: 16px;
     text-align: left;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-85%,-50%);
   }
