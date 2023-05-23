@@ -192,8 +192,8 @@ footer {
 
 footer h3 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #f4a261;
+  color: transparent;
+  height: 2rem;
 }
 
 footer p {

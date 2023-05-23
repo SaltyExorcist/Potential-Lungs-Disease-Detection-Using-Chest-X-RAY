@@ -147,3 +147,11 @@
     left: 50%;
     transform: translate(-85%,-50%);
   }
+
+  .about-para {
+    font-size: 15px;
+    text-align: left;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+  }

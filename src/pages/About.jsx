@@ -47,7 +47,7 @@ Rhydam Bose(<a href="https://github.com/Rhydam-Jr001" target="_blank" rel="noope
 <br/><br/>
 
 												
-                                                                                                        ~~~ Netaji Nagar Day Collage
+</p>  <p className="about-para"> ~~~ Netaji Nagar Day Collage
                                                                                                                 Computer Science Department(2023)
 </p>
       <FooterAbout/>
