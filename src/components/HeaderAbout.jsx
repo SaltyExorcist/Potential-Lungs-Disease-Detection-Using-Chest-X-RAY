@@ -6,6 +6,7 @@ import Logo from './logo.png'
 function HeaderAbout() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
+  const [showCard, setShowCard] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -27,6 +28,11 @@ function HeaderAbout() {
     setResult(response.data.result);
   };
 
+  const toggleCard = () => {
+    event.preventDefault();
+    setShowCard(!showCard);
+  };
+
   return (
     <header>
       <div className="logo">
@@ -36,8 +42,16 @@ function HeaderAbout() {
 			<li><a href="/">Home</a></li>
 			<li><a href="/About" className="active">About us</a></li>
 			<li><a href="https://github.com/SaltyExorcist/Potential-Lungs-Disease-Detection-Using-Chest-X-RAY" target="_blank" rel="noopener noreferrer">Contribute</a></li>
-			<li><a href="/">Contact us</a></li>
+			<li><a href="/" onClick={toggleCard}>Contact us</a></li>
 		</ul>
+    {showCard && (
+        <div className="card">
+          <h3>Contact Information</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: 123-456-7890</p>
+          {/* Additional content of the card */}
+        </div>
+      )}
 	</header>
   );
 }

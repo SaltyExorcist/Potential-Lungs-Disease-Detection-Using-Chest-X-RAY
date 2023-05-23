@@ -31,12 +31,13 @@ function Footer() {
     <div className="footer">
     <footer>
   <h3>Footer Title</h3>
-  <p>Some text describing your website or company.</p>
+  
   <div className="footer-links">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a href="/About">About Us</a>
+    <a href="https://github.com/SaltyExorcist/Potential-Lungs-Disease-Detection-Using-Chest-X-RAY" target="_blank" rel="noopener noreferrer">Contribute</a>
+    <a href="https://www.nndc.ac.in/" target="_blank" rel="noopener noreferrer">NNDC</a>
   </div>
+  <p>© NNDC Computer Science 2023</p>
 </footer>
  </div>
   );

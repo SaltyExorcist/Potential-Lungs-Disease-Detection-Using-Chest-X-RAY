@@ -73,11 +73,11 @@ function Home() {
       />
     </motion.svg>
       :
-      <>
+      <body>
       <Header/>
       <Form/>
       <Footer/>
-      </>
+      </body>
       }
       </div>
   );

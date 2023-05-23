@@ -5,7 +5,7 @@
     }
 
     body {
-      background: #D6EDED;
+      background-color: #D6EDED;
       max-width: 400px;
       padding: 1rem;
       margin: 0 auto;
@@ -166,20 +166,23 @@ header ul li a.active
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
+.footer{
+  min-height: 100vh;
+}
 
 
 footer {
   background-image: url('./wave.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center bottom -70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #f4a261;
   text-align: center;
-  position: relative;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -343,4 +346,56 @@ footer p {
 }
 
 
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 20px;
+    background-position: center bottom -30px;
+  }
+
+  footer h3 {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+  }
+
+  header .logo img {
+    width: 50px;
+    margin-right: 0;
+  }
+
+  header ul {
+    margin-top: 10px;
+  }
+
+  .form-container {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .form-card {
+    max-width: 100%;
+  }
+
+  .card {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    left: auto;
+  }
+}
 
