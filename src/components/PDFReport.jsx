@@ -7,10 +7,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     padding: '2cm',
     fontFamily: 'Times-Roman',
+    flex: 1, // Add flex: 1 to make the content take up the entire page
   },
   section: {
-    marginBottom: 10,
-    marginTop: '1cm', // Adjust the top margin as per your requirement
+    marginBottom: 40,
   },
   heading: {
     fontSize: 24,
@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
-    marginTop: '2cm', // Adjust the top margin as per your requirement
   },
   line: {
     borderBottomWidth: 2, // Increase the border width for a bolder line
     borderBottomColor: '#000000',
     marginTop: 20,
+    marginBottom : 50,
   },
   linefoot: {
     borderBottomWidth: 2, // Increase the border width for a bolder line
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 1,
     borderColor: '#000000',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   tableRow: {
     flexDirection: 'row',
     backgroundColor: '#f9f9f9',
   },
   tableCellHeader: {
-    backgroundColor: '#FF7F50', // Add the desired color value
+    backgroundColor: '#FF7F50',
     borderStyle: 'solid',
     borderBottomWidth: 1,
     borderColor: '#cccccc',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   summery_text: {
     fontSize: 12,
-    marginBottom: 95,
+    marginBottom: 43,
     color: '#000000',
   },
   serious: {
@@ -186,15 +186,22 @@ const PDFReport = ({ result , name, age, height, weight}) => {
             <Text style={styles.heading}>Medical Report</Text>
             <View style={styles.line} />
             <View style={styles.section}>
-            <Text style={styles.subheading}>Patient Details:</Text>
+            <Text style={styles.subheading}>Patient's Details:</Text>
+            <View style={{ marginBottom: 5 }}>
             <Text style={styles.text}>Name: {name}</Text>
             <Text style={styles.text}>Age: {age}</Text>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 5 }}>
             <Text style={styles.text}>Height: {height} cm</Text>
-            <Text style={styles.text}>Weight: {weight} Kg</Text>
-            <Text style={styles.text}>BMI: {calculateBMI()}</Text>
+            <View style={{ marginLeft: 100 }}>
+              <Text style={styles.text}>Weight: {weight} Kg</Text>
+            </View>
+          </View>
+              
+              <Text style={styles.text}>BMI: {calculateBMI()}</Text>
             </View>
             <View style={styles.section}>
-              <Text style={styles.subheading}>Results:</Text>
+              <Text style={styles.subheading}>Patient's Lung X-ray Report:</Text>
               <View style={styles.table}>
                 <View style={styles.tableRow}>
                   <Text style={styles.tableCellHeader}>Condition</Text>
@@ -211,7 +218,7 @@ const PDFReport = ({ result , name, age, height, weight}) => {
               </View>
             </View>
             <View style={styles.section}>
-              <Text style={styles.subheading}>Summary:</Text>
+              <Text style={styles.subheading}>Impression:</Text>
               <Text style={styles.summery_text}>{getSummaryText(result)}</Text>
             </View>
             <View style={styles.linefoot} />

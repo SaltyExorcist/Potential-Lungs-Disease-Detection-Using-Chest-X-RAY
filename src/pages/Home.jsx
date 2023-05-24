@@ -55,7 +55,7 @@ function Home() {
     <div className="App">
       {
         loading ? 
-
+      <div className="motion-container">
         <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
@@ -72,6 +72,7 @@ function Home() {
         }}
       />
     </motion.svg>
+    </div>
       :
       <body>
       <Header/>
