@@ -30,9 +30,9 @@
   width: 100%;
   padding: 8px;
   border: 1px solid hsl(200, 100%, 40%);
-  background: #316A74;
+  background: #D6EDED;
   border-radius: 4px;
-  color: hsl(200, 100%, 90%);
+  color:  #734488;
 }
 
 .new-item-form input[type="file"] {
@@ -144,6 +144,11 @@ header .logo img {
   border-radius: 13px;
 }
 
+span.logo-txt
+{
+  color: #316A74;
+}
+
 /*header .logo
 {
   color: #030300;
@@ -183,9 +188,10 @@ header ul li a.active
 }
 
 .preViewimg{
-  width: 80%;
-  height:310px;
+  width: 75%;
+  height:250px;
   border-radius: 8px;
+  border-color: #030300;
   justify-content: center;
 }
 
@@ -206,7 +212,8 @@ header ul li a.active
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%;
+  height: 60%;
 }
 /* The Close Button */
 .close {
@@ -236,7 +243,7 @@ header ul li a.active
 
 .flex-item-left {
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 25px;
   flex: 50%;
 }
 

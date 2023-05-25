@@ -36,6 +36,11 @@
     margin-right: 10px;
     border-radius: 13px;
   }
+
+  span.logo-txt
+{
+  color: #316A74;
+}
   
   /*header .logo
   {

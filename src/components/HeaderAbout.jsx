@@ -37,6 +37,7 @@ function HeaderAbout() {
     <header>
       <div className="logo">
 		<img src={Logo}/>
+    <h1><span className="logo-txt">MEDBOT</span></h1>
     </div>
 		<ul>
 			<li><a href="/">Home</a></li>
