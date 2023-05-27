@@ -78,11 +78,11 @@ function Form() {
           </div>
           <div>
             <label>Height:</label>
-            <input type="number" value={height} required placeholder="in cm" onChange={handleHeightChange} />
+            <input type="number" value={height} required placeholder="in cm" onChange={handleHeightChange} min={50}/>
           </div>
           <div>
             <label>Weight:</label>
-            <input type="number" value={weight} required placeholder="in kg" onChange={handleWeightChange} />
+            <input type="number" value={weight} required placeholder="in kg" onChange={handleWeightChange} min={3}/>
           </div>
           <input type="file" id="files" onChange={handleImageChange} ref={inputRef} required/>
           <button className="btn" onClick={()=>setModal(true)} type="submit" value='Submit'>Submit</button>

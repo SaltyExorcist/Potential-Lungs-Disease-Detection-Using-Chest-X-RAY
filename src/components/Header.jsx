@@ -48,8 +48,10 @@ function Header() {
     {showCard && (
         <div className="card">
           <h3>Contact Information</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: 123-456-7890</p>
+          <p>Email:
+          <a href="mailto:infoincorp26@gmail.com">infoincorp26@gmail.com</a>
+          </p>
+          <p>Phone:<a href="Tel: +91 123-456-7890">+91 123-456-7890</a></p>
           {/* Additional content of the card */}
         </div>
       )}

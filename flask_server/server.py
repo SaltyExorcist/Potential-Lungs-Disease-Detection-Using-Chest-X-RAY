@@ -16,6 +16,7 @@ def pred():
     file.save(file_path)
     img_data=cv2.imread(file_path)      
     result = predict_disease(img_data)
+    os.remove(file_path)
     return jsonify({'result': result})
 
 if __name__ == '__main__':

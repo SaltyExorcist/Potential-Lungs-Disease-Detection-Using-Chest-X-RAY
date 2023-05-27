@@ -212,7 +212,7 @@ header ul li a.active
 .backshadow .custom-modal{
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
   width: 60%;
   height: 60%;
@@ -465,58 +465,3 @@ footer p {
 ::-webkit-file-upload-button {
   display: none;
 }
-
-
-@media screen and (max-width: 768px) {
-  footer {
-    padding: 20px;
-    background-position: center bottom -30px;
-  }
-
-  footer h3 {
-    font-size: 1.5rem;
-  }
-
-  footer p {
-    font-size: 0.9rem;
-  }
-
-  .footer-links {
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 20px;
-    align-items: center;
-  }
-
-  header .logo img {
-    width: 50px;
-    margin-right: 0;
-  }
-
-  header ul {
-    margin-top: 10px;
-  }
-
-  .form-container {
-    position: static;
-    transform: none;
-    margin-top: 20px;
-  }
-
-  .form-card {
-    max-width: 100%;
-  }
-
-  .card {
-    position: static;
-    transform: none;
-    margin-top: 20px;
-    left: auto;
-  }
-}
-

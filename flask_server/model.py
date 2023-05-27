@@ -2,7 +2,7 @@ import tensorflow as tf
 from keras.preprocessing import image
 import PIL
 import numpy as np
-pretrained_model_path = "./models/Detect_Model_v2_Better_3.h5"
+pretrained_model_path = "./models/Detect_Model_Dense_net_121.h5"
 
 def predict_disease(img):
   
