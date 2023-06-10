@@ -1,43 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios';
 import HeaderAbout from '../components/HeaderAbout';
 import FooterAbout from '../components/FooterAbout';
 
 function About() {
-  const [file, setFile] = useState(null);
-  const [result, setResult] = useState(null);
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    const response = await axios.post('http://localhost:5000/predict_disease', formData, {
-      headers: { 'Content-Type': 'multipart/form-data',
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length, X-Requested-With", },
-    });
-    
-    setResult(response.data.result);
-  };
-
+ 
   return (
     <>
     <div>
       <HeaderAbout/>
       <h2><span className="tel1">About</span> <span className="tel2">Medbot</span></h2>
 <p className="about-paragraph">
-Medbot is an artificial intelligence-based initiative. For the Model, we employ a deep learning process such as CNN and some advanced variants of CNN, and Python for the back-end. Front end software also uses React and Python.This is a senior year college assignment.
+  <br/>
 
-Some of the files are written in the 'ipynb' format because they were created using 'Google colab'. We have included a link to the Google colab notebook in each notebook so that you can download the 'py' format for use.<br/>
-
-Collaborator :- <br/>
+Medbot is an innovative artificial intelligence-driven project that utilizes ReactJs and vanilla CSS for the website's design.To enhance the functionality and user experience, we have incorporated various npm packages. For the backend infrastructure, we have implemented a Flask server.
+By inputting your essential personal information along with a Chest X-ray, our system can provide accurate health assessment results. 
+However, it is important to note that as an artificial intelligence platform, Medbot is intended to supplement professional medical advice, 
+and we strongly recommend consulting a healthcare professional for further treatment and guidance. For more detailed information, 
+please visit our dedicated GitHub repository.   
+<br/>
+<br/>
+<b><u>Collaborator :- <br/></u></b>
 
 Rahul Biswas(<a href="https://github.com/ninja-codes-droid" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>
 Subhrojoyti Neogi(<a href="https://github.com/SaltyExorcist" target="_blank" rel="noopener noreferrer">Link to Github Profile</a>)<br/>

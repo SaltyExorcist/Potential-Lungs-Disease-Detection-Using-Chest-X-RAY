@@ -54,14 +54,18 @@ function Form() {
 
   const [modal,setModal] = useState(false);
 
-  // const handleReset = () =>{
-  //   setImage({preview:'', raw:''});
-  //   setName('');
-  //   setAge('');
-  //   setHeight('');
-  //   setWeight('');
-  //   setModal(false);
-  // };
+   const handleReset = () =>{
+     setImage({preview:'', raw:''});
+     setName('');
+     setAge('');
+     setHeight('');
+     setWeight('');
+     setModal(false);
+
+     if (inputRef.current) {
+      inputRef.current.value = null;
+    }
+   };
 
   return (
     <>
@@ -97,7 +101,7 @@ function Form() {
             <div className=' flex-container'>
               <div className='flex-item-left flex-container'>
                 <img className='preViewimg' src={image.preview} alt="The X-RAY"/>
-                <a href="/" className="rstbtn"><button>Reset</button></a>
+                <div className="rstbtn"><button onClick={handleReset}>Reset</button></div>
               </div>
               <div className="result-container flex-item-right">
                 <p>Bacterial Pneumonia: {result['Bacterial Pneumonia']}%</p>
