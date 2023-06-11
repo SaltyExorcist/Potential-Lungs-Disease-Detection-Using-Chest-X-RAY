@@ -1,7 +1,12 @@
 {
   "builds":  [
-    {"src": "flask_server/server.py", "use": "@vercel/python"}
+    { "src": "package.json", "use": "@vercel/static-build" }
   ],
+
+  "routes": [
+    { "src": "/api/(.*)", "dest": "flask_server/server.py" }
+  ],
+
   "rewrites":  [
     {"source": "/(.*)", "destination": "/"}
   ]
