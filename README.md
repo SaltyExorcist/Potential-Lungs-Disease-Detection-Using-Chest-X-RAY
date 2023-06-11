@@ -17,3 +17,33 @@ Rhydam Bose(https://github.com/Rhydam-Jr001)
                                                                                                         ~~~ Netaji Nagar Day Collage
                                                                                                                 Computer Science Department(2023)
 </p>
+
+***
+
+### To run the API,
+```
+cd flask_server
+then run the server.py file
+
+```
+
+
+___
+### To run Frontend Application,
+```
+cd client
+```
+
+```
+npm install
+```
+
+```
+npm run start
+
+```
+
+
+
+
+
