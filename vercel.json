@@ -1,5 +1,5 @@
 {
-  "rewrites":  [
+  "builds":  [
     {"src": "flask_server/server.py", "use": "@vercel/python"}
   ],
   "rewrites":  [
