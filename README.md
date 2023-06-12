@@ -31,7 +31,7 @@ then run the server.py file
 ___
 ### To run Frontend Application,
 ```
-cd client
+cd ..
 ```
 
 ```
