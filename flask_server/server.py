@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app,origins=["http://localhost:5173"])
 app.config['UPLOAD_FOLDER'] = r'static\files'
 
-@app.route('/predict_disease', methods=['POST'])
+@app.route('/predict_disease', methods=['GET'])
 
 def pred():
     file = request.files['file']
