@@ -42,7 +42,7 @@ function Form() {
     const formData = new FormData();
     formData.append('file', image.raw);
 
-    const response = await axios.post('/predict_disease', formData, {
+    const response = await axios.get('/predict_disease', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     
