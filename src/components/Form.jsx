@@ -42,8 +42,11 @@ function Form() {
     const formData = new FormData();
     formData.append('file', image.raw);
 
-    const response = await axios.get('/predict_disease', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
+    const response = await axios.post('http://localhost:5000/predict_disease', formData, {
+      headers: { 'Content-Type': 'multipart/form-data',
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length, X-Requested-With" },
     });
     
     setResult(response.data.result);
