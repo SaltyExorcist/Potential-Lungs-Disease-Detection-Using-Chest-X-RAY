@@ -43,10 +43,7 @@ function Form() {
     formData.append('file', image.raw);
 
     const response = await axios.post('https://potential-lungs-disease-detection-using-chest-x-ray.vercel.app/api/predict_disease', formData, {
-      headers: { 'Content-Type': 'multipart/form-data',
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Content-Length, X-Requested-With" },
+      headers: { 'Content-Type': 'multipart/form-data' },
     });
     
     setResult(response.data.result);
