@@ -5,10 +5,10 @@ import os
 import cv2
 
 app = Flask(__name__)
-CORS(app,origins=["http://localhost:5173"])
+CORS(app,origins=["*"])
 app.config['UPLOAD_FOLDER'] = r'static\files'
 
-@app.route('/predict_disease', methods=['GET'])
+@app.route('/api/predict_disease', methods=['POST'])
 
 def pred():
     file = request.files['file']

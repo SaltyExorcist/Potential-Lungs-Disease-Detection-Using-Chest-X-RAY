@@ -42,7 +42,7 @@ function Form() {
     const formData = new FormData();
     formData.append('file', image.raw);
 
-    const response = await axios.get('https://potential-lungs-disease-detection-using-chest-x-ray.vercel.app/predict_disease', formData, {
+    const response = await axios.post('https://potential-lungs-disease-detection-using-chest-x-ray.vercel.app/api/predict_disease', formData, {
       headers: { 'Content-Type': 'multipart/form-data',
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
