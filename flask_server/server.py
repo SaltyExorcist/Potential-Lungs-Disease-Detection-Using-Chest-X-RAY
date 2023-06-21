@@ -5,10 +5,10 @@ import os
 import cv2
 
 app = Flask(__name__)
-#CORS(app,origins=["*"])
+CORS(app,origins=["https://potential-lungs-disease-detection-using-chest-x-ray.vercel.app"])
 app.config['UPLOAD_FOLDER'] = r'static\files'
 
-@app.route('/api/predict_disease', methods=['GET'])
+@app.route('/predict_disease', methods=['POST'])
 
 def pred():
     file = request.files['file']
