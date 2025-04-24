@@ -7,15 +7,11 @@ Some of the files are written in the 'ipynb' format because they were created us
 
 Collaborator :-
 
-Rahul Biswas(https://github.com/ninja-codes-droid)
 Subhrojoyti Neogi(https://github.com/SaltyExorcist)
-Pranab Kumar Mondal(https://github.com/Lucifer-P13)
-Dipak Giri(https://github.com/dipakgiri17)
-Rhydam Bose(https://github.com/Rhydam-Jr001)
 
 												
-                                                                                                        ~~~ Netaji Nagar Day Collage
-                                                                                                                Computer Science Department(2023)
+                                                                                                        ~~~ Kalinga Institute of Industrial Technology
+                                                                                                                School of Computer Applications (2025)
 </p>
 
 ***
